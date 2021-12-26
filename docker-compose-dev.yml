@@ -1,0 +1,21 @@
+version: '3'
+services: 
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./package.json:/app/package.json
+      - ./src:/app/src
+      - ./public:/app/public
+  web-test:
+    image: frontend_web
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./package.json:/app/package.json
+      - ./src:/app/src
+      - ./public:/app/public
+    command: ["npm", "run", "test"]
