@@ -13,8 +13,8 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "docker-npm"
-  env: "Dockernpm-env"
+  app: "docker-node"
+  env: "Dockernode-env"
   bucket_name: "elasticbeanstalk-us-east-1-602842544363"
   bucket_path: "docker-npm"
   access_key_id: $AWS_ACCESS_KEY
